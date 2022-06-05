@@ -22,8 +22,6 @@
     color: white;
     font-size: 20px;
     margin-bottom: 0 !important;
-    height: min-content;
-    width: min-content;
     user-select: none;
     mix-blend-mode: difference;
 }
@@ -34,6 +32,5 @@
     height: 50px;
     border-radius: 50%;
     background: white;
-    pointer-events: none;
     transform: translate(-50%, -50%);
 }
