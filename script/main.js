@@ -19,19 +19,30 @@ $(document).mousemove(function(e) {
 
 let sy = $('.sy')
 
-let syArray = ' 480designC'
+let syArray = ' .1uitPOC'
 
 sy.hover(function() {
     let indx = $(this).index()
     let i = 0
-    setInterval(() => {
-        if (i <= syArray.length) {
+
+    function changeSys() {
+        if (syArray.length > i) {
             i++
             $(sy[indx]).text(syArray[i])
             $(sy[indx - 1]).text(syArray[i])
             $(sy[indx + 1]).text(syArray[i])
-        } else {
-            i = syArray.length
-        }
-    }, 200);
+
+            $(sy[indx]).css({'color': 'red'})
+            $(sy[indx - 1]).css({'color': 'red'})
+            $(sy[indx + 1]).css({'color': 'red'})
+
+            if (i == syArray.length) {
+                $(sy[indx]).css({'color': 'white'})
+                $(sy[indx - 1]).css({'color': 'white'})
+                $(sy[indx + 1]).css({'color': 'white'})
+            }
+        } 
+        setTimeout(changeSys, 100)
+    }
+    changeSys();
 })
